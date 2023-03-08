@@ -1,0 +1,29 @@
+min_sup=0.025
+min_freq=500
+1 frequent seqence:10
+(411 )-> support=576
+(2701 )-> support=630
+(2752 )-> support=598
+(3923 )-> support=550
+(7088 )-> support=569
+(7125 )-> support=692
+(8117 )-> support=518
+(8119 )-> support=524
+(8974 )-> support=587
+(9126 )-> support=573
+2 frequent seqence:10
+(411 )(411 )-> support=650
+(2701 )(2701 )-> support=727
+(2752 )(2752 )-> support=950
+(7088 )(7088 )-> support=556
+(7088 )(9126 )-> support=554
+(7125 )(7125 )-> support=613
+(8117 )(8117 )-> support=656
+(8974 )(8974 )-> support=768
+(9126 )(7088 )-> support=563
+(9126 )(9126 )-> support=560
+3 frequent seqence:2
+(2752 )(2752 )(2752 )-> support=899
+(8974 )(8974 )(8974 )-> support=621
+4 frequent seqence:1
+(2752 )(2752 )(2752 )(2752 )-> support=530
