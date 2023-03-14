@@ -65,7 +65,9 @@ def preprocessing(file_name):
 
 if __name__ == "__main__":
     train_dataset=preprocessing("training.txt")
+    test_dataset=preprocessing("test.txt")
     dataset_cols=np.transpose(train_dataset)
+    test_cols=np.transpose(test_dataset)
     total=np.size(train_dataset[:,0])
 
 
@@ -90,8 +92,20 @@ if __name__ == "__main__":
     ## all attribute condition probability based on member (attribute/member)
     #print(all_condition_prob)
     result=naivebayes_classifier(all_condition_prob,np.delete(train_dataset,2,axis=1),member_pro)
-
+    test_result=naivebayes_classifier(all_condition_prob,np.delete(test_dataset,2,axis=1),member_pro)
     acc=accuracy(result,dataset_cols[2])
+    test_acc=accuracy(test_result,test_cols[2])
+
+    print(f"Training Accuracy:{acc}")
+    print(f"Testing Accuracy:{test_acc}")
 
 
-    print(acc)
+    outfile=open("output.txt","w")
+    with open("test.txt","r") as file:
+        outfile.write(f"Training Accuracy:{acc}\n")
+        outfile.write(f"Testing Accuracy:{test_acc}\n\n")
+        outfile.write(f"----------------------------------------------------\n")
+        for idx,line in enumerate(file):
+            line=line.strip()
+            outfile.write(f"{line} member_card = {test_result[idx]}\n" )
+    outfile.close()
