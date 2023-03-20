@@ -30,11 +30,12 @@ if __name__ == "__main__":
     all_distance=np.sort(all_distance,axis=0)
     #target_idx=random.randint(0,total)
     visit=np.zeros(total)
-    while 
-    target_idx=480
-    target=all_distance[target_idx]
-    neighbors_idx=np.where(target<=radius)
-    neighbors=target[neighbors_idx]
+    count=0
+    while count<total:    
+        target_idx=480
+        target=all_distance[target_idx]
+        neighbors_idx=np.where(target<=radius)
+        neighbors=target[neighbors_idx]
 
     # plt.scatter(x,y)
     # plt.show()
